@@ -1,6 +1,6 @@
 using Microsoft.Xna.Framework;
 
-namespace PokeHaven.Core.world
+namespace PokeHaven.Core.game.world.spatial.interfaces
 {
     public interface ISpatialView
     {

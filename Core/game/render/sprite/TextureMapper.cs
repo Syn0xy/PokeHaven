@@ -8,7 +8,7 @@ using Microsoft.Xna.Framework.Graphics;
 using System;
 using PokeHaven.Core.Render.sprite.animation;
 
-namespace PokeHaven.Core.Render.sprite;
+namespace PokeHaven.Core.game.render.sprite;
 
 public class TextureMapper 
 {
@@ -142,11 +142,11 @@ public class TextureMapper
         return _animations.Remove(animationName);
     }
 
-    public AnimatedSprite CreateAnimatedSprite(string animationName)
-    {
-        Animation animation = GetAnimation(animationName);
-        return new AnimatedSprite(animation);
-    }
+    // public AnimatedSprite CreateAnimatedSprite(string animationName)
+    // {
+    //     Animation animation = GetAnimation(animationName);
+    //     return new AnimatedSprite(animation);
+    // }
 
 
 

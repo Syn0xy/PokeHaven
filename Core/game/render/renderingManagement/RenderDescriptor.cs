@@ -1,7 +1,7 @@
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 
-namespace PokeHaven.Core.Render.RenderingManagement;
+namespace PokeHaven.Core.game.render.renderingManagement;
 
 public struct RenderDescriptor {
     public Color Tint { get; set; } 

@@ -1,10 +1,11 @@
+using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
-using PokeHaven.Core.Render.RenderingManagement.interfaces;
-using PokeHaven.Core.Render.sprite;
-using PokeHaven.Core.world;
+using PokeHaven.Core.game.render.renderingManagement.interfaces;
+using PokeHaven.Core.game.render.sprite;
+using PokeHaven.Core.game.world.spatial.interfaces;
 using System.Collections.Generic;
 
-namespace PokeHaven.Core.Render.RenderingManagement;
+namespace PokeHaven.Core.game.render.renderingManagement;
 class RenderManager
 {
     private readonly SpriteBatch _spriteBatch;
@@ -31,7 +32,7 @@ class RenderManager
                 descriptor.Tint,
                 descriptor.Rotation,
                 descriptor.Origin,
-                spatialProperties.Scale,
+                spatialProperties.Scale * sprite.InnerScale,
                 descriptor.SpriteEffects,
                 descriptor.LayerDepth
             );

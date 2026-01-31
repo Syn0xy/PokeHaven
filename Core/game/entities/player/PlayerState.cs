@@ -1,5 +1,6 @@
 using Microsoft.Xna.Framework;
-using PokeHaven.Core.Render.RenderingManagement;
+using PokeHaven.Core.game.render.renderingManagement;
+
 sealed class PlayerState
 {
     public RenderDescriptor Descriptor { get; }

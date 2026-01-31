@@ -2,15 +2,16 @@
 using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
-using PokeHaven.Core.Render.RenderingManagement;
-using PokeHaven.Core.Render.sprite;
-using PokeHaven.Core.Render.RenderingManagement.interfaces;
 using System.Collections.Generic;
+using PokeHaven.Core.game.render.renderingManagement.interfaces;
+using PokeHaven.Core.game.render.renderingManagement;
+using PokeHaven.Core.game.render.sprite;
 
 namespace PokeHaven.Core;
 
 public class Game1 : Game
 {
+    public static readonly float GAME_SPEED = 10f;
     private GraphicsDeviceManager _graphics;
     private RenderManager _renderManager;
     private List<IRenderable> _renderables = new();
@@ -35,7 +36,8 @@ public class Game1 : Game
         _renderManager = new RenderManager(spriteBatch);
 
         TextureMapper trainerAtlas = TextureMapper.FromFile(Content, "images/characters/redSpriteMapping.xml");
-        Sprite playerSprite = trainerAtlas.CreateSprite("walk-U-1"); 
+        Sprite playerSprite = trainerAtlas.CreateSprite("walk-U-2"); 
+        playerSprite.InnerScale = new Vector2(0.25f, 0.25f);
         _player = new Player(playerSprite);
 
         _renderables.Add(_player);
