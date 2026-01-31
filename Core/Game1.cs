@@ -1,13 +1,21 @@
 ﻿using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
+using PokeHaven.Core.Render.RenderingManagement;
+using PokeHaven.Core.Render.sprite;
+using PokeHaven.Core.Render.RenderingManagement.interfaces;
+using System.Collections.Generic;
 
 namespace PokeHaven.Core;
 
 public class Game1 : Game
 {
     private GraphicsDeviceManager _graphics;
-    private SpriteBatch _spriteBatch;
+    private RenderManager _renderManager;
+    private List<IRenderable> _renderables = new();
+
+    private Player _player;
 
     public Game1()
     {
@@ -18,34 +26,39 @@ public class Game1 : Game
 
     protected override void Initialize()
     {
-        // TODO: Add your initialization logic here
-
         base.Initialize();
     }
 
     protected override void LoadContent()
     {
-        _spriteBatch = new SpriteBatch(GraphicsDevice);
+        var spriteBatch = new SpriteBatch(GraphicsDevice);
+        _renderManager = new RenderManager(spriteBatch);
 
-        // TODO: use this.Content to load your game content here
+        TextureMapper trainerAtlas = TextureMapper.FromFile(Content, "images/characters/redSpriteMapping.xml");
+        Sprite playerSprite = trainerAtlas.CreateSprite("walk-U-1"); 
+        _player = new Player(playerSprite);
+
+        _renderables.Add(_player);
     }
 
     protected override void Update(GameTime gameTime)
     {
-        if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed || Keyboard.GetState().IsKeyDown(Keys.Escape))
+        if (Keyboard.GetState().IsKeyDown(Keys.Escape))
             Exit();
 
-        // TODO: Add your update logic here
+        _player.Update(gameTime);
 
         base.Update(gameTime);
+
     }
 
     protected override void Draw(GameTime gameTime)
     {
         GraphicsDevice.Clear(Color.CornflowerBlue);
 
-        // TODO: Add your drawing code here
+        _renderManager.Draw(_renderables);
 
         base.Draw(gameTime);
     }
+
 }

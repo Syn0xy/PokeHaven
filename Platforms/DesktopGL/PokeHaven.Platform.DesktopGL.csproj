@@ -29,4 +29,10 @@
   <ItemGroup>
     <ProjectReference Include="..\..\Core\PokeHaven.Core.csproj" />
   </ItemGroup>
+  <ItemGroup>
+    <MonoGameContentReference Include="..\..\Core\Content\Content.mgcb">
+      <Link>Content\Content.mgcb</Link>
+      <Platform>DesktopGL</Platform>
+    </MonoGameContentReference>
+  </ItemGroup>
 </Project>

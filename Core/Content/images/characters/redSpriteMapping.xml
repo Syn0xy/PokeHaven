@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas>
+    <Texture>images/characters/red</Texture>
+    <Regions>
+        <Region name="walk-U-1" x="0" y="0" width="215" height="291" />
+        <Region name="walk-U-2" x="225" y="0" width="215" height="291" />
+        <Region name="walk-U-3" x="450" y="0" width="215" height="291" />
+    </Regions>
+    <Animations>
+        <Animation name="walk-U-animation" delay="200">
+            <Frame region="walk-U-1" />
+            <Frame region="walk-U-2" />
+        </Animation>
+    </Animations>
+</TextureAtlas>
