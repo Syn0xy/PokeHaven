@@ -6,7 +6,7 @@ using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;
 using System;
-using PokeHaven.Core.Render.sprite.animation;
+using PokeHaven.Core.game.render.sprite.animation;
 
 namespace PokeHaven.Core.game.render.sprite;
 
