@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas>
+    <Texture>images/characters/red</Texture>
+    <Regions>
+        <Region name="walk-D-1" x="0" y="0" width="64" height="64" />
+        <Region name="walk-D-2" x="64" y="0" width="64" height="64" />
+        <Region name="walk-D-3" x="128" y="0" width="64" height="64" />
+        <Region name="walk-D-4" x="192" y="0" width="64" height="64" />
+    </Regions>
+    <Animations>
+        <Animation name="walk-D-animation" delay="200">
+            <Frame region="walk-D-1" />
+            <Frame region="walk-D-2" />
+        </Animation>
+    </Animations>
+</TextureAtlas>
